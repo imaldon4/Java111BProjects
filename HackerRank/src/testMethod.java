@@ -1,4 +1,8 @@
-
+/**
+ * Is this a test method for what?
+ * @author imald
+ *
+ */
 public class testMethod {
 
     public static int[] gradingStudents(int[] grades) {

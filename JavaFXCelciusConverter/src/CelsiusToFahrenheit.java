@@ -25,6 +25,8 @@ public class CelsiusToFahrenheit extends Application {
 	private static String fahrenheit;
 	private static double celsius;
 	
+	//This is where some changes
+	//can happen!
 	// Create Stage
 	@Override public void start(Stage stage) {
 		// Label below textField
