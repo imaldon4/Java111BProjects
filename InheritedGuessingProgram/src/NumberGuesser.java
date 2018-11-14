@@ -1,4 +1,3 @@
-import java.util.Scanner;
 /**
  * This class contains utilities to obtain the midpoint between
  * two numbers.
@@ -29,7 +28,7 @@ public class NumberGuesser{
     public NumberGuesser(int lowerBound, int upperBound){
         lowerB = lowerBound;
         upperB = upperBound;
-        currentGuess = (lowerB + upperB / 2)-1;
+        currentGuess = (lowerB + upperB / 2) -1;
     }
 
 
@@ -53,13 +52,13 @@ public class NumberGuesser{
 
         //If user entered 'h' lower bound is set to midpoint value
         if (answer == 'h') {
-        	lowerB = currentGuess;
-            getMidpoint(currentGuess, upperB);
+        	setLowerB(currentGuess);
+            getMidpoint(lowerB, upperB);
 
         //If user entered 'l' higher bound is set to midpoint value
         } else if (answer == 'l') {
-        	upperB = currentGuess;
-            getMidpoint(lowerB, currentGuess);
+        	setUpperB(currentGuess);
+            getMidpoint(lowerB, upperB);
 
         //If user entered 'c' gets the current guess value
         } else if (answer == 'c'){

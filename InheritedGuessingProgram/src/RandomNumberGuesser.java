@@ -1,4 +1,4 @@
-import java.util.Random;
+
 /**
  * This subclass extends NumberGuesser superclass and can select
  * a random number between a set range.
@@ -7,9 +7,6 @@ import java.util.Random;
  *
  */
 public class RandomNumberGuesser extends NumberGuesser {
-
-	//Range field
-	private int range;
 	
 	/**
 	 * Constructor sets upper and lower bounds and generates
@@ -19,12 +16,6 @@ public class RandomNumberGuesser extends NumberGuesser {
 	 */
 	RandomNumberGuesser(int l, int u){
 		super(l, u);
-		range(lowerB, upperB);
-		super.currentGuess = rand();
-	}
-	
-	public void range(int l, int u) {
-		range = (u + l) / 2;
 	}
 
 
@@ -35,26 +26,28 @@ public class RandomNumberGuesser extends NumberGuesser {
 	 */
 	RandomNumberGuesser(){
 		super();
-		super.currentGuess = rand();
 	}
 	
 	/**
-	 * Overridden getCurrentGuess method returns simply
-	 * the currentGuess field value from NumberGuesser superclass.
+	 * Overridden getCurrentGuess method calls rand() method 
+	 * to calculate currentGuess field.
+	 * @return currentGuess The current guess field
 	 */
 	@Override
 	public int getCurrentGuess() {
+		rand();
 		return currentGuess;
 	}
 	
 	/**
 	 * Returns a random number between specified lower and
 	 * upper bound values.
-	 * @return rand A random integer between specified range
 	 */
-	public int rand() {
-		int rand = (int)(Math.random()*range) + lowerB;
-		return rand;
+	public void rand() {
+		int range = (getHigher()-getLower());
+		//Create a floor and calculate random number from floor to upper bound
+		int n = (int) Math.floor(Math.random()*(range)) + getLower();
+		currentGuess = n;
 	}
 	
     /**
@@ -69,29 +62,19 @@ public class RandomNumberGuesser extends NumberGuesser {
 		
         //If user entered 'h' lower bound is set to midpoint value
         if (answer == 'h') {
-        	lowerB = currentGuess;
-            getMidpoint(lowerB, upperB);
-            currentGuess = rand();
-            
+        	setLowerB(currentGuess);
         //If user entered 'l' higher bound is set to midpoint value
         } else if (answer == 'l') {
-        	upperB = currentGuess;
-            getMidpoint(lowerB, upperB);
-            currentGuess = rand();
+        	setUpperB(currentGuess);
 
         //If user entered 'c' gets the current guess value
         } else if (answer == 'c'){
             //Then prints result of number
-            System.out.print("You were thinking of the number: " + getCurrentGuess());
+            System.out.print("You were thinking of the number: " + currentGuess);
             
         //If user entered an invalid character type
         } else {
             System.out.print(answer + " is an invalid answer.");
         }
     }
-	
-	@Override
-	public void getMidpoint(int l, int u){
-		range(l, u);
-	}
 }
