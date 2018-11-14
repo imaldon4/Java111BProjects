@@ -18,6 +18,7 @@ public class NumberGuesser{
     public NumberGuesser() {
     	lowerB = 1;
     	upperB = 100;
+   
     }
 
     /**

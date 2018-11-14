@@ -12,6 +12,7 @@ public class GuessingGame {
 		
 		
 	}
+}
 //    /**
 //    This method will ask the user to play again, and return character
 //    to the place that called it.
@@ -63,4 +64,3 @@ public class GuessingGame {
 //        return (answer.charAt(0));
 //    }
 
-}
