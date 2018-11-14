@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 //
 //public class GuessingProgram {
 //    /**
@@ -43,4 +45,81 @@
 //        } while (reset == 'y' || reset == 'Y');
 //        System.out.println("Thank you for playing. Bye!");
 //    }
+
+
+
+
+
+
+
+//	public void stats() {
+//		
+//		ArrayList<Integer> a = array();
+//		int zero = 0;
+//		int one = 0;
+//		int two = 0;
+//		int three = 0;
+//		int four = 0;
+//		int five = 0;
+//		int six = 0;
+//		int seven = 0;
+//		int eight = 0;
+//		int nine = 0;
+//		int ten = 0;
+//		int eleven = 0;
+//		
+//		for(int i = 0; i < a.size(); i++) {
+//			if (a.get(i) == 1) {
+//				one++;
+//			} else if (a.get(i) == 2) {
+//				two++;
+//			} else if (a.get(i) == 3) {
+//				three++;
+//			} else if (a.get(i) == 4) {
+//				four++;
+//			} else if (a.get(i) == 5) {
+//				five++;
+//			} else if (a.get(i) == 6) {
+//				six++;
+//			} else if (a.get(i) == 7) {
+//				seven++;
+//			} else if (a.get(i) == 8) {
+//				eight++;
+//			} else if (a.get(i) == 9) {
+//				nine++;
+//			} else if (a.get(i) == 10) {
+//				ten++;
+//			} else if (a.get(i) == 0) {
+//				zero++;
+//			} else {
+//				eleven++;
+//			}
+//		}
+//
+////		System.out.println((double)(a.size()));
+////		System.out.println((double)(one)/a.size());
+//		System.out.println("One is: " + ((double)(one)*100/a.size()) + "%");
+//		System.out.println("Two is: " + ((double)(two)*100/a.size()) + "%");
+//		System.out.println("Three is: " + ((double)(three)*100/a.size()) + "%");
+//		System.out.println("Four is: " + ((double)(four)*100/a.size()) + "%");
+//		System.out.println("Five is: " + ((double)(five)*100/a.size()) + "%");
+//		System.out.println("Six is: " + ((double)(six)*100/a.size()) + "%");
+//		System.out.println("Seven is: " + ((double)(seven)*100/a.size()) + "%");
+//		System.out.println("Eight is: " + ((double)(eight)*100/a.size()) + "%");
+//		System.out.println("Nine is: " + ((double)(nine)*100/a.size()) + "%");
+//		System.out.println("Ten is: " + ((double)(ten)*100/a.size()) + "%");
+//		System.out.println("Eleven is: " + ((double)(eleven)*100/a.size()) + "%");
+//		System.out.println("Zero is: " + ((double)(zero)*100/a.size()) + "%");
+//		
+//		System.out.println("Total percent: " + (one+two+three+four+five+six+seven+eight+nine+ten+eleven+zero));
+//	}
+//}
+
+
+//public ArrayList<Integer> array() {
+//	ArrayList<Integer> a = new ArrayList<>();
+//	for (int i = 0; i < 1000000; i++) {
+//		a.add(i, rand());
+//	}
+//	return a;
 //}

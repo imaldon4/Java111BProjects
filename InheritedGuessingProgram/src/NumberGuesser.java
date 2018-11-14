@@ -18,7 +18,7 @@ public class NumberGuesser{
     public NumberGuesser() {
     	lowerB = 1;
     	upperB = 100;
-   
+    	currentGuess = (lowerB + upperB / 2) -1;
     }
 
     /**
@@ -29,6 +29,7 @@ public class NumberGuesser{
     public NumberGuesser(int lowerBound, int upperBound){
         lowerB = lowerBound;
         upperB = upperBound;
+        currentGuess = (lowerB + upperB / 2)-1;
     }
 
 
@@ -36,40 +37,40 @@ public class NumberGuesser{
     @return str Returns the concatenated string of upper and lower bounds.
     */
     public String toString(){
-        String str = "(Upper Bound: " + upperB + ", Lower Bound: " + lowerB;
+        String str = "(Upper Bound: " + upperB + ", Lower Bound: " + lowerB + ")";
         return str;
     }
     
 
-//    /**
-//    Sets the values of upper and lower bound depending on 
-//    whether the user entered higher or lower.
-//    @param answer Takes either 'h', 'l','c', or an illegal 
-//    character and sets the appropriate value of upper and lower bounds
-//    or returns an error message.
-//    */
-//    public void setValues(char answer) {
-//        int correct;        //Holds value if user entered 'c'
-//
-//        //If user entered 'h' lower bound is set to midpoint value
-//        if (answer == 'h') {
-//            lowerB = getMidpoint(lowerB, upperB);
-//
-//        //If user entered 'l' higher bound is set to midpoint value
-//        } else if (answer == 'l') {
-//            upperB = getMidpoint(lowerB, upperB);
-//
-//        //If user entered 'c' gets the current guess value
-//        } else if (answer == 'c'){
-//            correct = getCurrentGuess();
-//            //Then prints result of number
-//            System.out.print("You were thinking of the number: " + correct);
-//
-//        //If user entered an invalid character type
-//        } else {
-//            System.out.print(answer + " is an invalid answer");
-//        }
-//    }
+    /**
+    Sets the values of upper and lower bound depending on 
+    whether the user entered higher or lower.
+    @param answer Takes either 'h', 'l','c', or an illegal 
+    character and sets the appropriate value of upper and lower bounds
+    or returns an error message.
+    */
+    public void setValues(char answer) {
+
+        //If user entered 'h' lower bound is set to midpoint value
+        if (answer == 'h') {
+        	lowerB = currentGuess;
+            getMidpoint(currentGuess, upperB);
+
+        //If user entered 'l' higher bound is set to midpoint value
+        } else if (answer == 'l') {
+        	upperB = currentGuess;
+            getMidpoint(lowerB, currentGuess);
+
+        //If user entered 'c' gets the current guess value
+        } else if (answer == 'c'){
+            //Then prints result of number
+            System.out.print("You were thinking of the number: " + getCurrentGuess());
+
+        //If user entered an invalid character type
+        } else {
+            System.out.print(answer + " is an invalid answer");
+        }
+    }
 
 
     /**
@@ -93,7 +94,7 @@ public class NumberGuesser{
 
 
     /**
-    @return mid Returns the current value.
+    @return mid Returns the current midpoint value.
     */
     public int getCurrentGuess(){
         return currentGuess;
@@ -105,11 +106,9 @@ public class NumberGuesser{
      * returns the midpoint value. 
      * @param low
      * @param high
-     * @return mid Returns the midpoint value for two numbers entered.
      */
-    public int getMidpoint(int low, int high){
-        int mid = (low + high)/2;
-        return mid;
+    public void getMidpoint(int low, int high){
+        currentGuess = (high + low)/2;
     }
 
     /**
